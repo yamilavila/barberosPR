@@ -1,0 +1,9 @@
+NSCameraUsageDescription = "\"BarberosPR\" Would Like To Access the Camera
+This let you to upload and share photos in your profile and portfolio ";
+NSPhotoLibraryUsageDescription = "\"BarberosPR\" Would Like To Access Your Photos
+BarberosPR will only upload and share photos you choose.";
+NSLocationWhenInUseUsageDescription = "Allow BarberosPR to access your location while you use de app
+BarberosPR helps you to find your favorite barbershop.";
+PermissionGroupNotification = "BarberosPR Would Like To Send You Push Notifications
+Notifications may include alerts, sounds, icon badges and events.
+These can be configured in Settings.";

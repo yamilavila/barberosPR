@@ -7,6 +7,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:501377623862:android:8cff30d54a2ec3981f7597",
+        "android_client_info": {
+          "package_name": "com.avilnet.barberospr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501377623862-ttvmq1nagfc6l3hktbscit2htq1p5s57.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.avilnet.barberospr",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "501377623862-520bq3hmvqdfotvp3p2mg5qjet6uksuk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBva0HTAzS32ePjqSC0mP7Bitz8Dq8zgM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501377623862-520bq3hmvqdfotvp3p2mg5qjet6uksuk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "501377623862-1ensaoi3ag67qtcbdpluv25jj1qupkoj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.barberospr"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:501377623862:android:e895903fed2e5e791f7597",
         "android_client_info": {
           "package_name": "com.mycompany.barberospr"

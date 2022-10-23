@@ -92,18 +92,81 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Cuenta nueva',
     },
     'enzn3oal': {
-      'en': 'Full Name and Last',
+      'en': 'Full Name ',
       'es': 'Nombre y apellidos',
     },
     '7eie303p': {
       'en': 'Email',
       'es': 'Correo electrónico',
     },
-    'wcp2dczg': {
+    'g9vvx4p2': {
+      'en': 'Address',
+      'es': 'Correo electrónico',
+    },
+    '43v0n5h3': {
+      'en': 'City',
+      'es': 'Correo electrónico',
+    },
+    'dhlglr4w': {
+      'en': 'Zip Code',
+      'es': 'Correo electrónico',
+    },
+    'y0x2iagp': {
       'en': 'Phone #',
-      'es': 'Teléfono',
+      'es': 'Correo electrónico',
+    },
+    '0yr4wc5a': {
+      'en': 'Password',
+      'es': 'Correo electrónico',
+    },
+    'za9ywtzy': {
+      'en': 'Confirm password',
+      'es': 'Correo electrónico',
+    },
+    'kzxrr9rv': {
+      'en': '',
+      'es': '',
+    },
+    'zy2ry5kk': {
+      'en': 'I Agree Policies & Uses',
+      'es': '',
+    },
+    'vyno9lfm': {
+      'en': '',
+      'es': '',
+    },
+    '1cuxn2hk': {
+      'en': 'I Accept Terms & Conditions',
+      'es': '',
+    },
+    'tdg9cgk4': {
+      'en': 'Subscribe',
+      'es': '',
     },
     'm2shaxw5': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // userPinCode
+  {
+    '2tgmv6q4': {
+      'en': 'Confirm your Code',
+      'es': '',
+    },
+    'xiikzan7': {
+      'en': 'This code helps keep your account safe and secure.',
+      'es': '',
+    },
+    'zvm7m6ds': {
+      'en': 'Confirm & Continue',
+      'es': '',
+    },
+    '2arv7owd': {
+      'en': 'Enter Pin Code Below',
+      'es': '',
+    },
+    '71xwog5q': {
       'en': 'Home',
       'es': '',
     },
@@ -119,11 +182,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'twwvn9ff': {
-      'en': 'Account Settings',
+      'en': 'My Barbershop',
       'es': '',
     },
     'ngl2io1i': {
-      'en': 'Order History',
+      'en': 'My appointment',
       'es': '',
     },
     's2o1b77o': {
@@ -138,6 +201,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Terms of Service',
       'es': '',
     },
+    'gteh6ebh': {
+      'en': 'Welcome!',
+      'es': '',
+    },
+    'eg0vy79o': {
+      'en': 'Find your Barbershop',
+      'es': '',
+    },
+    'lrpdno1s': {
+      'en': 'Search',
+      'es': '',
+    },
     '6igwdazn': {
       'en': 'Log Out',
       'es': '',
@@ -148,6 +223,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'simtkz87': {
       'en': '[username@domain.com]',
+      'es': '',
+    },
+    'ioq5uw0l': {
+      'en': 'Barbershop',
       'es': '',
     },
   },
@@ -170,7 +249,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'jxcmkrkg': {
-      'en': 'Contact',
+      'en': 'Book me now!',
       'es': '',
     },
     'yeir1qh1': {
@@ -181,64 +260,244 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Thursday June 22',
       'es': '',
     },
-    'fn4xpxg6': {
-      'en': 'Class Name',
+    'av4p4d9o': {
+      'en': 'Corillo',
       'es': '',
     },
-    'uqa1wttk': {
-      'en': '30m | High Intensity | Indoor/Outdoor',
+  },
+  // CalendarUser
+  {
+    'kr4dcxt0': {
+      'en': 'Appointments ',
       'es': '',
     },
-    'nkthp1pz': {
-      'en': 'Reserve',
+    'xfs42v29': {
+      'en': 'Citas',
       'es': '',
     },
-    '0h4em9a1': {
-      'en': '10:00am',
+  },
+  // mySettings
+  {
+    'hh04leqn': {
+      'en':
+          'Choose what notifcations you want to recieve below and we will update the settings.',
       'es': '',
     },
-    'hucaqeii': {
-      'en': 'Thursday June 22',
+    'sh36om0w': {
+      'en': 'Push Notifications',
       'es': '',
     },
-    'uazdmaon': {
-      'en': 'Class Name',
+    '52l5usw7': {
+      'en':
+          'Receive Push notifications from our application on a semi regular basis.',
       'es': '',
     },
-    '7b5jq2h4': {
-      'en': '30m | High Intensity | Indoor/Outdoor',
+    'k712dcm3': {
+      'en': 'Email Notifications',
       'es': '',
     },
-    'hlei7ufs': {
-      'en': 'Reserve',
+    '46t7hjqk': {
+      'en':
+          'Receive email notifications from our marketing team about new features.',
       'es': '',
     },
-    'ccxwt5jo': {
-      'en': '10:00am',
+    'ygdfh0k5': {
+      'en': 'Location Services',
       'es': '',
     },
-    'naa5t90i': {
-      'en': 'Thursday June 22',
+    '8cvg83p5': {
+      'en':
+          'Allow us to track your location, this helps keep track of spending and keeps you safe.',
       'es': '',
     },
-    '2kay9rg0': {
-      'en': 'Class Name',
+    'hzkroqee': {
+      'en': 'Change Changes',
       'es': '',
     },
-    'bs14xzec': {
-      'en': '30m | High Intensity | Indoor/Outdoor',
+    'rtp1gtba': {
+      'en': 'Settings',
       'es': '',
     },
-    'jhh2fp1y': {
-      'en': 'Reserve',
+  },
+  // notificationPage
+  {
+    'ivsou05n': {
+      'en': 'Notifications',
       'es': '',
     },
-    'rweodmqu': {
-      'en': '10:00am',
+    'abjxtfg2': {
+      'en': 'Daily stuff',
       'es': '',
     },
-    'pgbylex7': {
-      'en': 'Thursday June 22',
+    't8zrsa16': {
+      'en': '8',
+      'es': '',
+    },
+    'ihv7lo8y': {
+      'en': 'Workouts',
+      'es': '',
+    },
+    'vd1aurc2': {
+      'en': 'Upcoming Lessons',
+      'es': '',
+    },
+    'l8yj41gt': {
+      'en': '1',
+      'es': '',
+    },
+    '85rv5mv9': {
+      'en': 'Lesson Name',
+      'es': '',
+    },
+    'ws1ldfy1': {
+      'en': 'A description of your lesson goes here...',
+      'es': '',
+    },
+    '6eh01355': {
+      'en': '2',
+      'es': '',
+    },
+    'ua5f71x9': {
+      'en': 'Lesson Name',
+      'es': '',
+    },
+    '4ecn2fef': {
+      'en': 'A description of your lesson goes here...',
+      'es': '',
+    },
+    '4dyieh7b': {
+      'en': '3',
+      'es': '',
+    },
+    '98mko1nb': {
+      'en': 'Lesson Name',
+      'es': '',
+    },
+    'pruo9vgk': {
+      'en': 'A description of your lesson goes here...',
+      'es': '',
+    },
+    '8o7engxv': {
+      'en': '4',
+      'es': '',
+    },
+    '7kswujyq': {
+      'en': 'Lesson Name',
+      'es': '',
+    },
+    'bcjwjqak': {
+      'en': 'A description of your lesson goes here...',
+      'es': '',
+    },
+    'r5ps86yj': {
+      'en': 'Begin Lessons',
+      'es': '',
+    },
+    '5bzyuuf4': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // Miscellaneous
+  {
+    'fxxfb7uf': {
+      'en':
+          '\"BarberosPR\" Would Like To Access the Camera\nThis let you to upload and share photos in your profile and portfolio ',
+      'es': '',
+    },
+    'j2qk69dn': {
+      'en':
+          '\"BarberosPR\" Would Like To Access Your Photos\nBarberosPR will only upload and share photos you choose.',
+      'es': '',
+    },
+    '5g8foirq': {
+      'en':
+          'Allow BarberosPR to access your location while you use de app\nBarberosPR helps you to find your favorite barbershop.',
+      'es': '',
+    },
+    'd8vtfvui': {
+      'en':
+          'BarberosPR Would Like To Send You Push Notifications\nNotifications may include alerts, sounds, icon badges and events.\nThese can be configured in Settings.',
+      'es': '',
+    },
+    'mwtsfc0h': {
+      'en': '',
+      'es': '',
+    },
+    'xrqigsf7': {
+      'en': '',
+      'es': '',
+    },
+    'zzvjfoav': {
+      'en': '',
+      'es': '',
+    },
+    'lb2emvlj': {
+      'en': '',
+      'es': '',
+    },
+    'e17kuimf': {
+      'en': '',
+      'es': '',
+    },
+    'vkrg1ubi': {
+      'en': '',
+      'es': '',
+    },
+    '08d747kf': {
+      'en': '',
+      'es': '',
+    },
+    'g6bfka4n': {
+      'en': '',
+      'es': '',
+    },
+    'uxds9ui5': {
+      'en': '',
+      'es': '',
+    },
+    'lrj1yxyk': {
+      'en': '',
+      'es': '',
+    },
+    '3r4w1m3j': {
+      'en': '',
+      'es': '',
+    },
+    '7jey9eke': {
+      'en': '',
+      'es': '',
+    },
+    '85tqiw5x': {
+      'en': '',
+      'es': '',
+    },
+    'f09gwavz': {
+      'en': '',
+      'es': '',
+    },
+    '41lquho7': {
+      'en': '',
+      'es': '',
+    },
+    '3yjmw1xp': {
+      'en': '',
+      'es': '',
+    },
+    'xb1wtw4w': {
+      'en': '',
+      'es': '',
+    },
+    '32lnywxr': {
+      'en': '',
+      'es': '',
+    },
+    'aickmbnc': {
+      'en': '',
+      'es': '',
+    },
+    'yywthmor': {
+      'en': '',
       'es': '',
     },
   },

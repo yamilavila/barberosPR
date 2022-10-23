@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>BarberosPR</string>
+	<string>Minapp: BarberosPR</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -33,12 +33,24 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>com.googleusercontent.apps.501377623862-1ensaoi3ag67qtcbdpluv25jj1qupkoj</string>
+                <string>com.googleusercontent.apps.501377623862-9tgt5bpq8prjhkb6o752jqiga1e6am8j</string>
                 
             </array>
         </dict>
 
+        <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>barberos_p_r</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+        <string>com.avilnet.barberospr</string>
+        </array>
+        </dict>
     </array>
+    <key>FlutterDeepLinkingEnabled</key>
+    <true/>
 
 
 	<key>CFBundleVersion</key>
@@ -46,8 +58,24 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 
-
-
+	<key>NSCameraUsageDescription</key>
+      <string>"BarberosPR" Would Like To Access the Camera
+This let you to upload and share photos in your profile and portfolio </string>
+	<key>NSPhotoLibraryUsageDescription</key>
+      <string>"BarberosPR" Would Like To Access Your Photos
+BarberosPR will only upload and share photos you choose.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+      <string>Allow BarberosPR to access your location while you use de app
+BarberosPR helps you to find your favorite barbershop.</string>
+	<key>PermissionGroupNotification</key>
+      <string>BarberosPR Would Like To Send You Push Notifications
+Notifications may include alerts, sounds, icon badges and events.
+These can be configured in Settings.</string>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>fetch</string>
+        <string>remote-notification</string>
+    </array>
 
 
 	<key>UILaunchStoryboardName</key>

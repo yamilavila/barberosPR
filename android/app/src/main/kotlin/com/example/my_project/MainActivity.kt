@@ -1,4 +1,4 @@
-package com.mycompany.barberospr
+package com.avilnet.barberospr
 
 import io.flutter.embedding.android.FlutterActivity
 
