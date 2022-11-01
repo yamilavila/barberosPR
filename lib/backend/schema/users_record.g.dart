@@ -61,24 +61,17 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.editedTime;
+    value = object.password;
     if (value != null) {
       result
-        ..add('edited_time')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
-    }
-    value = object.bio;
-    if (value != null) {
-      result
-        ..add('bio')
+        ..add('password')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.userName;
+    value = object.confirmPassword;
     if (value != null) {
       result
-        ..add('user_name')
+        ..add('confirm_password')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -128,16 +121,12 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.phoneNumber = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'edited_time':
-          result.editedTime = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
-          break;
-        case 'bio':
-          result.bio = serializers.deserialize(value,
+        case 'password':
+          result.password = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'user_name':
-          result.userName = serializers.deserialize(value,
+        case 'confirm_password':
+          result.confirmPassword = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
@@ -167,11 +156,9 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String? phoneNumber;
   @override
-  final DateTime? editedTime;
+  final String? password;
   @override
-  final String? bio;
-  @override
-  final String? userName;
+  final String? confirmPassword;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -185,9 +172,8 @@ class _$UsersRecord extends UsersRecord {
       this.uid,
       this.createdTime,
       this.phoneNumber,
-      this.editedTime,
-      this.bio,
-      this.userName,
+      this.password,
+      this.confirmPassword,
       this.ffRef})
       : super._();
 
@@ -208,9 +194,8 @@ class _$UsersRecord extends UsersRecord {
         uid == other.uid &&
         createdTime == other.createdTime &&
         phoneNumber == other.phoneNumber &&
-        editedTime == other.editedTime &&
-        bio == other.bio &&
-        userName == other.userName &&
+        password == other.password &&
+        confirmPassword == other.confirmPassword &&
         ffRef == other.ffRef;
   }
 
@@ -223,16 +208,14 @@ class _$UsersRecord extends UsersRecord {
                     $jc(
                         $jc(
                             $jc(
-                                $jc(
-                                    $jc($jc(0, email.hashCode),
-                                        displayName.hashCode),
-                                    photoUrl.hashCode),
-                                uid.hashCode),
-                            createdTime.hashCode),
-                        phoneNumber.hashCode),
-                    editedTime.hashCode),
-                bio.hashCode),
-            userName.hashCode),
+                                $jc($jc(0, email.hashCode),
+                                    displayName.hashCode),
+                                photoUrl.hashCode),
+                            uid.hashCode),
+                        createdTime.hashCode),
+                    phoneNumber.hashCode),
+                password.hashCode),
+            confirmPassword.hashCode),
         ffRef.hashCode));
   }
 
@@ -245,9 +228,8 @@ class _$UsersRecord extends UsersRecord {
           ..add('uid', uid)
           ..add('createdTime', createdTime)
           ..add('phoneNumber', phoneNumber)
-          ..add('editedTime', editedTime)
-          ..add('bio', bio)
-          ..add('userName', userName)
+          ..add('password', password)
+          ..add('confirmPassword', confirmPassword)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -280,17 +262,14 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String? get phoneNumber => _$this._phoneNumber;
   set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
 
-  DateTime? _editedTime;
-  DateTime? get editedTime => _$this._editedTime;
-  set editedTime(DateTime? editedTime) => _$this._editedTime = editedTime;
+  String? _password;
+  String? get password => _$this._password;
+  set password(String? password) => _$this._password = password;
 
-  String? _bio;
-  String? get bio => _$this._bio;
-  set bio(String? bio) => _$this._bio = bio;
-
-  String? _userName;
-  String? get userName => _$this._userName;
-  set userName(String? userName) => _$this._userName = userName;
+  String? _confirmPassword;
+  String? get confirmPassword => _$this._confirmPassword;
+  set confirmPassword(String? confirmPassword) =>
+      _$this._confirmPassword = confirmPassword;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -309,9 +288,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _uid = $v.uid;
       _createdTime = $v.createdTime;
       _phoneNumber = $v.phoneNumber;
-      _editedTime = $v.editedTime;
-      _bio = $v.bio;
-      _userName = $v.userName;
+      _password = $v.password;
+      _confirmPassword = $v.confirmPassword;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -341,9 +319,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             uid: uid,
             createdTime: createdTime,
             phoneNumber: phoneNumber,
-            editedTime: editedTime,
-            bio: bio,
-            userName: userName,
+            password: password,
+            confirmPassword: confirmPassword,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

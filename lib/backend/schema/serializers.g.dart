@@ -7,13 +7,31 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
-      ..add(UserCalendarStruct.serializer)
-      ..add(UserRecord.serializer)
-      ..add(UsercalendarRecord.serializer)
+      ..add(AppointmentsRecord.serializer)
+      ..add(BarberRecord.serializer)
+      ..add(BarbershopCalendarRecord.serializer)
+      ..add(ClientRecord.serializer)
+      ..add(ContactInfoRecord.serializer)
+      ..add(HorariosRecord.serializer)
+      ..add(ImagesCollectionRecord.serializer)
+      ..add(MyBarbershopRecord.serializer)
+      ..add(MyGalleryRecord.serializer)
+      ..add(NotificationFromClientRecord.serializer)
+      ..add(UserQuotesRecord.serializer)
       ..add(UsersRecord.serializer)
+      ..add(UsersStruct.serializer)
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(DateTime)]),
-          () => new ListBuilder<DateTime>())
+          const FullType(BuiltList, const [
+            const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])
+          ]),
+          () => new ListBuilder<DocumentReference<Object?>>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])
+          ]),
+          () => new ListBuilder<DocumentReference<Object?>>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(

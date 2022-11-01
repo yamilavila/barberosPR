@@ -1,14 +1,69 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /user/{document} {
-      allow create: if request.auth.uid == document;
-      allow read: if request.auth.uid == resource.data.phone_number;
-      allow write: if request.auth.uid == resource.data.phone_number;
-      allow delete: if request.auth.uid == resource.data.phone_number;
+    match /MyBarbershop/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
     }
 
-    match /user/{parent}/usercalendar/{document} {
+    match /MyBarbershop/{parent}/horarios/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/horarios/{document} {
+      allow read: if true;
+    }
+
+
+    match /MyBarbershop/{parent}/myGallery/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/myGallery/{document} {
+      allow read: if true;
+    }
+
+
+    match /MyBarbershop/{parent}/contact_info/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/contact_info/{document} {
+      allow read: if true;
+    }
+
+
+    match /MyBarbershop/{parent}/imagesCollection/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/imagesCollection/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/barber/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/client/{document} {
       allow create: if request.auth.uid == parent;
       allow read: if true;
       allow write: if request.auth.uid == parent;

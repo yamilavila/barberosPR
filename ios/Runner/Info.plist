@@ -33,24 +33,12 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>com.googleusercontent.apps.501377623862-9tgt5bpq8prjhkb6o752jqiga1e6am8j</string>
+                <string>com.googleusercontent.apps.1065051069077-uplg8u324p1mb46ev43pjin3dk5ce9rk</string>
                 
             </array>
         </dict>
 
-        <dict>
-        <key>CFBundleTypeRole</key>
-        <string>Editor</string>
-        <key>CFBundleURLName</key>
-        <string>barberos_p_r</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-        <string>com.avilnet.barberospr</string>
-        </array>
-        </dict>
     </array>
-    <key>FlutterDeepLinkingEnabled</key>
-    <true/>
 
 
 	<key>CFBundleVersion</key>
@@ -64,13 +52,10 @@ This let you to upload and share photos in your profile and portfolio </string>
 	<key>NSPhotoLibraryUsageDescription</key>
       <string>"BarberosPR" Would Like To Access Your Photos
 BarberosPR will only upload and share photos you choose.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-      <string>Allow BarberosPR to access your location while you use de app
-BarberosPR helps you to find your favorite barbershop.</string>
 	<key>PermissionGroupNotification</key>
-      <string>BarberosPR Would Like To Send You Push Notifications
-Notifications may include alerts, sounds, icon badges and events.
-These can be configured in Settings.</string>
+      <string>Please accept notifications so you can be remainded of services.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+      <string>Need your location for better search.</string>
     <key>UIBackgroundModes</key>
     <array>
         <string>fetch</string>

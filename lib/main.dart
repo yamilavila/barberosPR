@@ -8,14 +8,13 @@ import 'backend/push_notifications/push_notifications_util.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await FlutterFlowTheme.initialize();
+
+  FFAppState(); // Initialize FFAppState
 
   runApp(MyApp());
 }
@@ -31,12 +30,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale? _locale;
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
+  ThemeMode _themeMode = ThemeMode.system;
 
   late Stream<BarberosPRFirebaseUser> userStream;
-
-  late AppStateNotifier _appStateNotifier;
-  late GoRouter _router;
+  BarberosPRFirebaseUser? initialUser;
+  bool displaySplashImage = true;
 
   final authUserSub = authenticatedUserStream.listen((_) {});
   final fcmTokenSub = fcmTokenUserStream.listen((_) {});
@@ -44,14 +42,12 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _appStateNotifier = AppStateNotifier();
-    _router = createRouter(_appStateNotifier);
     userStream = barberosPRFirebaseUserStream()
-      ..listen((user) => _appStateNotifier.update(user));
+      ..listen((user) => initialUser ?? setState(() => initialUser = user));
     jwtTokenStream.listen((_) {});
     Future.delayed(
       Duration(seconds: 1),
-      () => _appStateNotifier.stopShowingSplashImage(),
+      () => setState(() => displaySplashImage = false),
     );
   }
 
@@ -66,12 +62,11 @@ class _MyAppState extends State<MyApp> {
       setState(() => _locale = createLocale(language));
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
       });
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       title: 'BarberosPR',
       localizationsDelegates: [
         FFLocalizationsDelegate(),
@@ -85,101 +80,20 @@ class _MyAppState extends State<MyApp> {
         Locale('es'),
       ],
       theme: ThemeData(brightness: Brightness.light),
-      darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: _themeMode,
-      routeInformationParser: _router.routeInformationParser,
-      routerDelegate: _router.routerDelegate,
-    );
-  }
-}
-
-class NavBarPage extends StatefulWidget {
-  NavBarPage({Key? key, this.initialPage, this.page}) : super(key: key);
-
-  final String? initialPage;
-  final Widget? page;
-
-  @override
-  _NavBarPageState createState() => _NavBarPageState();
-}
-
-/// This is the private State class that goes with NavBarPage.
-class _NavBarPageState extends State<NavBarPage> {
-  String _currentPageName = 'Home';
-  late Widget? _currentPage;
-
-  @override
-  void initState() {
-    super.initState();
-    _currentPageName = widget.initialPage ?? _currentPageName;
-    _currentPage = widget.page;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final tabs = {
-      'Home': HomeWidget(),
-      'Barbers': BarbersWidget(),
-      'CalendarUser': CalendarUserWidget(),
-    };
-    final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
-    return Scaffold(
-      body: _currentPage ?? tabs[_currentPageName],
-      bottomNavigationBar: Visibility(
-        visible: responsiveVisibility(
-          context: context,
-          desktop: false,
-        ),
-        child: BottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap: (i) => setState(() {
-            _currentPage = null;
-            _currentPageName = tabs.keys.toList()[i];
-          }),
-          backgroundColor: Colors.white,
-          selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
-          unselectedItemColor: Color(0x8A000000),
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
-          type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
-                size: 24,
+      home: initialUser == null || displaySplashImage
+          ? Builder(
+              builder: (context) => Container(
+                color: Color(0xFF03989E),
+                child: Image.asset(
+                  'assets/images/barberosprlogo.png',
+                  fit: BoxFit.contain,
+                ),
               ),
-              label: FFLocalizations.of(context).getText(
-                'ioq5uw0l' /* Barbershop */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.content_cut,
-                size: 24,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'av4p4d9o' /* Corillo */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.calendar_today_outlined,
-                size: 24,
-              ),
-              activeIcon: Icon(
-                Icons.perm_contact_cal_sharp,
-                size: 24,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'xfs42v29' /* Citas */,
-              ),
-              tooltip: '',
             )
-          ],
-        ),
-      ),
+          : currentUser!.loggedIn
+              ? PushNotificationsHandler(child: BarberHomeWidget())
+              : LoginBarberosPRWidget(),
     );
   }
 }

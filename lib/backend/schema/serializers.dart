@@ -1,9 +1,15 @@
 import 'package:built_value/standard_json_plugin.dart';
 import 'package:from_css_color/from_css_color.dart';
 
-import 'user_record.dart';
 import 'users_record.dart';
-import 'usercalendar_record.dart';
+import 'my_barbershop_record.dart';
+import 'horarios_record.dart';
+import 'my_gallery_record.dart';
+import 'contact_info_record.dart';
+import 'images_collection_record.dart';
+import 'notification_from_client_record.dart';
+import 'barber_record.dart';
+import 'client_record.dart';
 
 import 'index.dart';
 
@@ -14,10 +20,16 @@ part 'serializers.g.dart';
 const kDocumentReferenceField = 'Document__Reference__Field';
 
 @SerializersFor(const [
-  UserRecord,
   UsersRecord,
-  UsercalendarRecord,
-  UserCalendarStruct,
+  MyBarbershopRecord,
+  HorariosRecord,
+  MyGalleryRecord,
+  ContactInfoRecord,
+  ImagesCollectionRecord,
+  NotificationFromClientRecord,
+  BarberRecord,
+  ClientRecord,
+  UsersStruct,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

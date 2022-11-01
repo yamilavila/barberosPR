@@ -76,13 +76,11 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
 
   @override
   Widget build(BuildContext context) => _loading
-      ? Center(
-          child: SizedBox(
-            width: 50,
-            height: 50,
-            child: CircularProgressIndicator(
-              color: FlutterFlowTheme.of(context).primaryColor,
-            ),
+      ? Container(
+          color: Color(0xFF03989E),
+          child: Image.asset(
+            'assets/images/barberosprlogo.png',
+            fit: BoxFit.contain,
           ),
         )
       : widget.child;
@@ -90,15 +88,22 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
 
 final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'LoginBarberosPR': (data) async => LoginBarberosPRWidget(),
-  'userPinCode': (data) async => UserPinCodeWidget(),
-  'Barbers': (data) async => hasMatchingParameters(data, {'visitors'})
-      ? BarbersWidget(
-          visitors: getParameter(data, 'visitors'),
-        )
-      : NavBarPage(initialPage: 'Barbers'),
-  'CalendarUser': (data) async => NavBarPage(initialPage: 'CalendarUser'),
-  'mySettings': (data) async => MySettingsWidget(),
-  'notificationPage': (data) async => NotificationPageWidget(),
+  'Barbers': (data) async => BarbersWidget(),
+  'AppointmentPage': (data) async => AppointmentPageWidget(),
+  'barberSettings': (data) async => BarberSettingsWidget(),
+  'haircutSchedule': (data) async => HaircutScheduleWidget(),
+  'BarbershopUser': (data) async => BarbershopUserWidget(),
+  'BarberNotifications': (data) async => BarberNotificationsWidget(),
+  'resetPassword': (data) async => ResetPasswordWidget(),
+  'checkEmailResetPassword': (data) async => CheckEmailResetPasswordWidget(),
+  'clientHome': (data) async => ClientHomeWidget(
+        photoProfile: getParameter(data, 'photoProfile'),
+        usernameProfile: getParameter(data, 'usernameProfile'),
+        userConfirmado: getParameter(data, 'userConfirmado'),
+      ),
+  'barberOrClient': (data) async => BarberOrClientWidget(),
+  'bookSeats': (data) async => BookSeatsWidget(),
+  'clientSettings': (data) async => ClientSettingsWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>501377623862-9tgt5bpq8prjhkb6o752jqiga1e6am8j.apps.googleusercontent.com</string>
+	<string>1065051069077-uplg8u324p1mb46ev43pjin3dk5ce9rk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.501377623862-9tgt5bpq8prjhkb6o752jqiga1e6am8j</string>
+	<string>com.googleusercontent.apps.1065051069077-uplg8u324p1mb46ev43pjin3dk5ce9rk</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>501377623862-ttvmq1nagfc6l3hktbscit2htq1p5s57.apps.googleusercontent.com</string>
+	<string>1065051069077-mlq6j87tcm72t2lq8g0pbb4gr0g9qbqj.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDtkxMmQugPePD6BVd3pQKk1qxhXVxV_b0</string>
+	<string>AIzaSyB8ql6DBGTjb-bNSDdWruEUfz9_Wa9XtTI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>501377623862</string>
+	<string>1065051069077</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.avilnet.barberospr</string>
 	<key>PROJECT_ID</key>
-	<string>barberospr</string>
+	<string>barberospr-60679</string>
 	<key>STORAGE_BUCKET</key>
-	<string>barberospr.appspot.com</string>
+	<string>barberospr-60679.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:501377623862:ios:d969283617e89bd91f7597</string>
+	<string>1:1065051069077:ios:6f7d0056d84239df45d99c</string>
+	<key>DATABASE_URL</key>
+	<string>https://barberospr-60679-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
